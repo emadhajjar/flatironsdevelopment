@@ -1,0 +1,19 @@
+{
+  "name": "flatirons",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "repository": "git@github.com:flatironsdevelopment/rails_node_test_emadhajjar.git",
+  "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "volta": {
+    "node": "22.14.0",
+    "yarn": "1.22.22"
+  }
+}
