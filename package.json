@@ -7,13 +7,20 @@
   "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
   "scripts": {
     "docker": "yarn workspace @flatirons/docker",
-    "ts": "yarn workspace @deel-be/ts",
+    "format:lint": "eslint --fix",
+    "format:prettier": "prettier './**/*' --write --ignore-unknown",
+    "format": "concurrently -m 1 'yarn:format:*'",
+    "lint": "yarn workspace @flatirons/lint",
+    "ts": "yarn workspace @flatirons/ts",
     "start": "concurrently 'yarn:start:*'",
     "start:database": "yarn docker api:database"
   },
   "dependencies": {},
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "@flatirons/lint": "*",
+    "@flatirons/ts": "*",
+    "concurrently": "^9.1.2",
+    "rimraf": "^6.0.1"
   },
   "workspaces": [
     "apps/*",
