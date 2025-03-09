@@ -13,10 +13,16 @@
     "format": "concurrently -m 1 'yarn:format:*'",
     "lint": "yarn workspace @flatirons/lint",
     "ts": "yarn workspace @flatirons/ts",
+    "web": "yarn workspace @flatirons/web",
+    "start:web": "yarn web start",
     "start": "concurrently 'yarn:start:*'",
     "start:database": "yarn docker api:database"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "redaxios": "^0.5.1"
+  },
   "devDependencies": {
     "@flatirons/lint": "*",
     "@flatirons/ts": "*",
