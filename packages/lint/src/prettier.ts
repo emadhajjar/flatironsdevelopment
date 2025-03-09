@@ -1,7 +1,7 @@
-import type { Config } from "prettier";
-import type { PluginEmbedOptions } from "prettier-plugin-embed";
-import type { SqlBaseOptions } from "prettier-plugin-sql";
-import type { PluginOptions as TailwindcssOptions } from "prettier-plugin-tailwindcss";
+import type { Config } from 'prettier';
+import type { PluginEmbedOptions } from 'prettier-plugin-embed';
+import type { SqlBaseOptions } from 'prettier-plugin-sql';
+import type { PluginOptions as TailwindcssOptions } from 'prettier-plugin-tailwindcss';
 
 type PrettierConfig = Config &
   PluginEmbedOptions &
@@ -17,11 +17,11 @@ const config: Config = {
   jsxSingleQuote: true,
   // trailingComma: 'all',
   plugins: [
-    "prettier-plugin-embed",
-    "prettier-plugin-prisma",
-    "prettier-plugin-sort-json",
-    "prettier-plugin-sql",
-    "prettier-plugin-tailwindcss",
+    'prettier-plugin-embed',
+    'prettier-plugin-prisma',
+    'prettier-plugin-sort-json',
+    'prettier-plugin-sql',
+    'prettier-plugin-tailwindcss',
   ],
   printWidth: 100,
   // semi: true,
@@ -30,7 +30,7 @@ const config: Config = {
 };
 
 const prettierPluginEmbedConfig: PluginEmbedOptions = {
-  embeddedSqlTags: ["sql"],
+  embeddedSqlTags: ['sql'],
 };
 
 const prettierPluginSortJsonConfig: SortJsonOptions = {
@@ -38,12 +38,12 @@ const prettierPluginSortJsonConfig: SortJsonOptions = {
 };
 
 const prettierPluginSqlConfig: SqlBaseOptions = {
-  keywordCase: "upper",
-  language: "postgresql",
+  keywordCase: 'upper',
+  language: 'postgresql',
 };
 
 const prettierPluginTailwindcssConfig: TailwindcssOptions = {
-  tailwindFunctions: ["clsx"],
+  tailwindFunctions: ['clsx'],
 };
 
 export const prettierConfig: PrettierConfig = {
