@@ -104,6 +104,7 @@ export const eslintConfig = tsEslint.config(
       '@typescript-eslint/interface-name-prefix': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-extraneous-class': 'off',
+      '@typescript-eslint/no-namespace': 'off',
       'import-x/default': 'off',
       'import-x/no-named-as-default-member': 'off',
       'jsx-a11y/click-events-have-key-events': 'warn',

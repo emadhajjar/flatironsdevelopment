@@ -1,0 +1,52 @@
+{
+  "name": "@flatirons/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "yarn db:generate",
+    "build": "concurrently -m 1 'nest build' tsc-alias",
+    "check-types": "tsc --noEmit",
+    "start": "NODE_OPTIONS='--import=specifier-resolution-node/register' nest start",
+    "start:dev": "NODE_OPTIONS='--import=specifier-resolution-node/register' nest start --watch",
+    "start:debug": "NODE_OPTIONS='--import=specifier-resolution-node/register' nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "db:generate": "prisma generate",
+    "db:dev": "dotenv -e ../../conf/dev.env prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "dotenv -e ../../conf/dev.env prisma db seed"
+  },
+  "prisma": {
+    "seed": "node --experimental-strip-types prisma/seed.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.3",
+    "@nestjs/config": "^4.0.0",
+    "@nestjs/core": "^11.0.3",
+    "@nestjs/platform-express": "^11.0.3",
+    "@nestjs/schedule": "^5.0.0",
+    "@nestjs/serve-static": "^5.0.1",
+    "@nestjs/swagger": "^11.0.2",
+    "@prisma/client": "^6.2.1",
+    "multer": "^1.4.5-lts.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.1",
+    "@nestjs/schematics": "^11.0.0",
+    "@swc/cli": "^0.6.0",
+    "@swc/core": "^1.10.9",
+    "@types/express": "^5.0.0",
+    "@types/multer": "^1.4.12",
+    "prisma": "^6.2.1",
+    "prisma-class-generator": "^0.2.11",
+    "prisma-docs-generator": "^0.8.0",
+    "prisma-json-schema-generator": "^5.1.5",
+    "prisma-json-types-generator": "^3.2.2",
+    "source-map-support": "^0.5.21"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

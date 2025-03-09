@@ -7,13 +7,15 @@
   "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
   "scripts": {
     "prepare": "husky",
-    "docker": "yarn workspace @flatirons/docker",
     "format:lint": "eslint --fix",
     "format:prettier": "prettier './**/*' --write --ignore-unknown",
     "format": "concurrently -m 1 'yarn:format:*'",
+    "api": "yarn workspace @flatirons/api",
+    "docker": "yarn workspace @flatirons/docker",
     "lint": "yarn workspace @flatirons/lint",
     "ts": "yarn workspace @flatirons/ts",
     "web": "yarn workspace @flatirons/web",
+    "start:api": "yarn api start",
     "start:web": "yarn web start",
     "start": "concurrently 'yarn:start:*'",
     "start:database": "yarn docker api:database"
@@ -27,6 +29,7 @@
     "@flatirons/lint": "*",
     "@flatirons/ts": "*",
     "concurrently": "^9.1.2",
+    "dotenv-cli": "^8.0.0",
     "husky": "^9.1.7",
     "rimraf": "^6.0.1"
   },

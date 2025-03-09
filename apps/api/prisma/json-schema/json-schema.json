@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "ExchangeRate": {
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "product": {
+          "$ref": "#/definitions/Product"
+        },
+        "rate": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "Product": {
+      "properties": {
+        "exchangeRates": {
+          "items": {
+            "$ref": "#/definitions/ExchangeRate"
+          },
+          "type": "array"
+        },
+        "expiration": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "properties": {
+    "exchangeRate": {
+      "$ref": "#/definitions/ExchangeRate"
+    },
+    "product": {
+      "$ref": "#/definitions/Product"
+    }
+  },
+  "type": "object"
+}
