@@ -1,0 +1,12 @@
+{
+  "name": "@flatirons/docker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "api:database": "concurrently -c 'bgBlue.bold,bgMagenta.bold' -m 1 'docker volume create flatirons.api' 'docker-compose -f api.postgres.yaml up --build --no-recreate'"
+  },
+  "volta": {
+    "extends": "../package.json"
+  }
+}

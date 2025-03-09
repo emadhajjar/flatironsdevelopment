@@ -5,12 +5,19 @@
   "type": "module",
   "repository": "git@github.com:flatironsdevelopment/rails_node_test_emadhajjar.git",
   "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
-  "scripts": {},
+  "scripts": {
+    "docker": "yarn workspace @flatirons/docker",
+    "start:database": "yarn docker api:database",
+    "start": "concurrently 'yarn:start:*'"
+  },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "docker"
   ],
   "volta": {
     "node": "22.14.0",
