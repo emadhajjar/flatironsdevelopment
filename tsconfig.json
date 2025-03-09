@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "exclude": ["**/*.js", "build", "coverage"],
+  "extends": "@flatirons/ts/base.json",
+  "include": ["typings/**/*", "**/*.ts", "**/*.tsx"]
+}

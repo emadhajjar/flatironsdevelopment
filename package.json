@@ -7,8 +7,9 @@
   "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
   "scripts": {
     "docker": "yarn workspace @flatirons/docker",
-    "start:database": "yarn docker api:database",
-    "start": "concurrently 'yarn:start:*'"
+    "ts": "yarn workspace @deel-be/ts",
+    "start": "concurrently 'yarn:start:*'",
+    "start:database": "yarn docker api:database"
   },
   "dependencies": {},
   "devDependencies": {
