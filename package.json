@@ -15,7 +15,7 @@
     "lint": "yarn workspace @flatirons/lint",
     "ts": "yarn workspace @flatirons/ts",
     "web": "yarn workspace @flatirons/web",
-    "start:api": "yarn api start",
+    "start:api": "yarn api start:dev",
     "start:web": "yarn web start",
     "start": "concurrently 'yarn:start:*'",
     "start:database": "yarn docker api:database"
