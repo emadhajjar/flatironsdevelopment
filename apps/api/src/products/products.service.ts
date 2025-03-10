@@ -54,7 +54,9 @@ export class ProductsService {
           results.push({
             expiration: dayjs(data.expiration).toDate(),
             name: data.name,
-            price: Number.parseFloat(data.price),
+            price: Number.parseFloat(
+              Number.isNaN(data.price) ? data.price.replaceAll(/[^0-9.-]+/g, '') : data.price,
+            ),
           });
         })
         .on('end', async () => {
