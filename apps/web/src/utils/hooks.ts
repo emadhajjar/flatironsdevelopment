@@ -1,4 +1,5 @@
-import { createContext, use, useState } from 'react';
+import { createContext, use, useRef, useState } from 'react';
+import { v4 } from 'uuid';
 
 export function createPropertiesContext<Properties>() {
   const Context = createContext<Properties | undefined>(undefined);
@@ -56,4 +57,10 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
   };
 
   return [storedValue, setValue] as const;
+}
+
+export function useUuid() {
+  const reference = useRef(v4());
+
+  return reference.current;
 }
