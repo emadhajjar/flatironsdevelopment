@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { NumericFormat } from 'react-number-format';
 
 import { Product } from '../utils/interface';
 
@@ -35,7 +36,24 @@ export const Products = ({ products }: Properties) => {
               >
                 {product.name}
               </th>
-              <td className='px-6 py-4'>{product.price} BRL</td>
+              <td className='px-6 py-4'>
+                <NumericFormat
+                  displayType='text'
+                  suffix=' BRL'
+                  thousandSeparator={true}
+                  value={product.price.toFixed(2)}
+                />
+                {product.exchangeRates?.map((exchangeRate) => (
+                  <div key={exchangeRate.id}>
+                    <NumericFormat
+                      displayType='text'
+                      suffix={` ${exchangeRate.currency.toUpperCase()}`}
+                      thousandSeparator={true}
+                      value={exchangeRate.rate.toFixed(2)}
+                    />
+                  </div>
+                ))}
+              </td>
               <td className='px-6 py-4'>{dayjs(product.expiration).format('DD/MM/YYYY')}</td>
             </tr>
           ))}
